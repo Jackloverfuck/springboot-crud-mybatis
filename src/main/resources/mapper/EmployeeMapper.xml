@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhou.mapper.EmployeeMapper">
+    <select id="selectEmployeeList" resultMap="Employee">
+        select * from employee
+    </select>
+
+    <insert id="insertEmployee" parameterType="com.zhou.pojo.Employee">
+        insert into employee values(#{employeeName},#{email},#{gender},#{departmentId},#{ate})
+    </insert>
+
+    <resultMap id="Employee" type="com.zhou.pojo.Employee">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="employee_name" jdbcType="VARCHAR" property="employeeName" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="gender" jdbcType="INTEGER" property="gender" />
+        <result column="department_id" jdbcType="INTEGER" property="departmentId" />
+        <result column="date" jdbcType="DATE" property="date" />
+    </resultMap>
+</mapper>

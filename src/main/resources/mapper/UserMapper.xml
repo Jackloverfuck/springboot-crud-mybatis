@@ -3,13 +3,13 @@
                 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhou.mapper.UserMapper">
-    <select id="selectPasswordByName" resultMap="User">
+<select id="selectPasswordByName" resultMap="User">
         select * from user where user_name = #{userName} and password = #{password}
     </select>
 
-    <resultMap id="User" type="com.zhou.pojo.User">
-        <id column="id" jdbcType="INTEGER" property="id" />
-        <result column="user_name" jdbcType="VARCHAR" property="userName" />
-        <result column="password" jdbcType="VARCHAR" property="password" />
-    </resultMap>
+<resultMap id="User" type="com.zhou.pojo.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+</resultMap>
 </mapper>

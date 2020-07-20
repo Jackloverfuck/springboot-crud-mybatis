@@ -72,7 +72,7 @@
 									<td th:text="${emp.getEmployeeName()}"></td>
 									<td th:text="${emp.getEmail()}"></td>
 									<td th:text="${emp.getGender() == 0 ? '女':'男'}"></td>
-									<td th:text="${emp.getDepartmentName()}"></td>
+									<td th:text="${emp.getDepartmentId()}"></td>
 									<!--使用时间格式化工具-->
 									<td th:text="${#dates.format(emp.getDate(),'yyyy-MM-dd')}"></td>
 									<td >
