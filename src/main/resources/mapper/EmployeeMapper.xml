@@ -8,8 +8,21 @@
     </select>
 
     <insert id="insertEmployee" parameterType="com.zhou.pojo.Employee">
-        insert into employee values(#{employeeName},#{email},#{gender},#{departmentId},#{ate})
+        insert into employee (employee_name,email,gender,department_id,date) values(#{employeeName},#{email},#{gender},#{departmentId},#{date})
     </insert>
+
+    <select id="selectEmployeeById" resultType="com.zhou.pojo.Employee">
+        select * from employee where id = #{id}
+    </select>
+
+    <update id="updateEmployee" parameterType="com.zhou.pojo.Employee">
+        update employee set employee_name = #{employeeName}, email = #{email},
+        gender = #{gender}, department_id = #{departmentId}, date = #{date} where id = #{id}
+    </update>
+
+    <delete id="deleteEmployee" parameterType="integer">
+        delete from employee where id = #{id}
+    </delete>
 
     <resultMap id="Employee" type="com.zhou.pojo.Employee">
         <id column="id" jdbcType="INTEGER" property="id" />

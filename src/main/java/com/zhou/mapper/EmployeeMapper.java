@@ -15,4 +15,10 @@ public interface EmployeeMapper {
 
 
     int insertEmployee(Employee employee);
+
+    Employee selectEmployeeById(Integer id);
+
+    void updateEmployee(Employee employee);
+
+    void deleteEmployee(Integer id);
 }

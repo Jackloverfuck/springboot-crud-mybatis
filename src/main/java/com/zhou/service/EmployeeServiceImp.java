@@ -22,4 +22,24 @@ public class EmployeeServiceImp implements EmployeeService{
     public List<Employee> selectEmployeeList() {
         return employeeMapper.selectEmployeeList();
     }
+
+    @Override
+    public int insertEmployee(Employee employee) {
+        return employeeMapper.insertEmployee(employee);
+    }
+
+    @Override
+    public Employee selectEmployeeById(Integer id) {
+        return employeeMapper.selectEmployeeById(id);
+    }
+
+    @Override
+    public void updateEmployee(Employee employee) {
+        employeeMapper.updateEmployee(employee);
+    }
+
+    @Override
+    public void deleteEmployee(Integer id) {
+        employeeMapper.deleteEmployee(id);
+    }
 }

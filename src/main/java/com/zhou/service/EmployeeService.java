@@ -12,4 +12,12 @@ import java.util.List;
 public interface EmployeeService {
 
     List<Employee> selectEmployeeList();
+
+    int insertEmployee(Employee employee);
+
+    Employee selectEmployeeById(Integer id);
+
+    void updateEmployee(Employee employee);
+
+    void deleteEmployee(Integer id);
 }
