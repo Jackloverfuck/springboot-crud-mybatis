@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
@@ -36,8 +37,13 @@ public class MyBatisConfig {
 
         //添加数据源
         factory.setDataSource(dataSource);
+        //设置别名
+        factory.setTypeAliasesPackage("com.zhou.pojo");
 
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+        //设置驼峰命名法
+        configuration.setMapUnderscoreToCamelCase(true);
+
         factory.setConfiguration(configuration);
 
         //标记mapper文件位置
