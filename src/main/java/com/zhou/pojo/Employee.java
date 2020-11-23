@@ -2,10 +2,11 @@ package com.zhou.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 @Data
-public class Employee {
+public class Employee implements Serializable {
     private int id;
     private String employeeName;
     private String email;

@@ -12,4 +12,8 @@
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="password" jdbcType="VARCHAR" property="password" />
 </resultMap>
+
+    <insert id="insertAll" >
+        insert into user (user_name,password) values ('zlk', 'ss')
+    </insert>
 </mapper>

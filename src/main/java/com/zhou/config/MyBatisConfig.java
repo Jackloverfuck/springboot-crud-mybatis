@@ -24,7 +24,7 @@ public class MyBatisConfig {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDbType("POOLED");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://47.97.127.213:3306/zlk_springboot_crud?serverTimezone=UTC");
+        dataSource.setUrl("jdbc:mysql://47.97.127.213:3306/zlk_springboot_crud?useUnicode=true&characterEncoding=UTF-8");
         dataSource.setUsername("root");
         dataSource.setPassword("root");
         return dataSource;
