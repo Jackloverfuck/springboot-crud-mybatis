@@ -2,6 +2,7 @@ package com.zhou.pojo;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "mygirl")
+@ConfigurationProperties(prefix = "mygirl")//绑定配置文件中的内容
+@PropertySource(value = {"classpath:mygirl.properties"})//指定要读取的配置文件
 public class MyGirl {
 
     private int id;
@@ -23,3 +25,4 @@ public class MyGirl {
     private User user;
     private List<String> list;
 }
+
